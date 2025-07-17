@@ -4,7 +4,8 @@ theme: "PaperMod"
 languageCode: "zh-cn"
 defaultContentLanguage: "zh"
 pagination:
-  pagerSize: 5
+  pagerSize: 5  # 每页 5 篇文章
+
 outputs:
   home:
     - HTML
@@ -32,13 +33,24 @@ menu:
     - name: 搜索
       url: /search/
       weight: 5
-params:
-  # 控制首页文章卡片中的封面图尺寸
-  ShowImageInList: true
-  ShowImageInSingle: true   # ❌不在详情页显示封面
 
-  # 可选：自定义图片显示尺寸（实验性）
-  imagePreviewHeight: 200
+# config.yaml
+params:
+  # 1. 列表页全局隐藏封面
+  cover:
+    hiddenInList: true   # 只影响列表
+  # 2. 详情页全局启用封面
+  ShowCover: true        # 只影响文章页
+  defaultTheme: auto
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  ShowWordCount: true
+  ShowReadingTime: true
+
+  assets:
+    css:
+      - css/extra.css   # ✅ 自定义 CSS 路径
+
   homeInfoParams:
     Title: "你好，我是 Neo 👋"
     Content: "10年iOS工程师，热爱独立开发与写作。这个博客记录我探索 AI、自动化、自由生活的旅程。"
@@ -48,4 +60,3 @@ params:
       url: "https://github.com/yufanghui"
     - name: twitter
       url: "https://twitter.com/damenmatt06"
-
