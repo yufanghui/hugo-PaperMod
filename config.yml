@@ -48,6 +48,7 @@ params:
   ShowWordCount: true
   ShowReadingTime: true
   ShowCodeCopyButtons: true
+  ShowShareButtons: true
 
   homeInfoParams:
     Title: "你好，我是 Neo 👋"
