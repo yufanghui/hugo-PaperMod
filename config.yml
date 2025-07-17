@@ -49,7 +49,9 @@ params:
   ShowReadingTime: true
   ShowCodeCopyButtons: true
   ShowShareButtons: true
-
+  ShowToc: true          # 所有文章默认显示目录
+  TocOpen: true         # 页面加载时目录是否默认展开（true=展开）
+  tocWidth: 300          # 目录宽度（px）
   homeInfoParams:
     Title: "你好，我是 Neo 👋"
     Content: "10年iOS工程师，热爱独立开发与写作。这个博客记录我探索 AI、自动化、自由生活的旅程。"
