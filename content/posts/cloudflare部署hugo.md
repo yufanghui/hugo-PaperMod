@@ -21,7 +21,7 @@ https://github.com/adityatelange/hugo-PaperMod
 
 archives的模板
 
-```
+```yaml
 ---
 title: "归档"
 layout: "archives"
@@ -30,7 +30,7 @@ layout: "archives"
 
 search的模板
 
-```
+```yaml
 ---
 title: "搜索"
 layout: "search"
@@ -42,7 +42,7 @@ layout: "search"
 
 新建了一个config.yml文件，简单配置下，提交，cloudflare就自动部署了，支持自定义子域名。
 
-```
+```yml
 baseURL: "https://blog.neoqingyi.xyz"
 title: "Neo 的博客"
 theme: "PaperMod"
