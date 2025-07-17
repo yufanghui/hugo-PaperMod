@@ -3,8 +3,8 @@ title: "Neo 的博客"
 theme: "PaperMod"
 languageCode: "zh-cn"
 defaultContentLanguage: "zh"
-paginate: 5
-
+pagination:
+  pagerSize: 5
 params:
   homeInfoParams:
     Title: "你好，世界"
