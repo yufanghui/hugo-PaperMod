@@ -9,7 +9,7 @@ tags: ["cloudflare"]
 
 今天研究了一下通过cloudflare部署一个网站，快是真的快。fork了一个hugo的官方模板
 
-```
+```js
 https://github.com/adityatelange/hugo-PaperMod
 ```
 
@@ -42,7 +42,7 @@ layout: "search"
 
 新建了一个config.yml文件，简单配置下，提交，cloudflare就自动部署了，支持自定义子域名。
 
-```yml
+```js
 baseURL: "https://blog.neoqingyi.xyz"
 title: "Neo 的博客"
 theme: "PaperMod"
