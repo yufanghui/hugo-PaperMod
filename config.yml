@@ -36,6 +36,7 @@ menu:
 
 # config.yaml
 params:
+  comments: true  
   # 1. 列表页全局隐藏封面
   cover:
     hiddenInList: true   # 只影响列表
