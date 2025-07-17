@@ -33,6 +33,12 @@ menu:
       url: /search/
       weight: 5
 params:
+  # 控制首页文章卡片中的封面图尺寸
+  ShowImageInList: true
+  ShowImageInSingle: true   # ❌不在详情页显示封面
+
+  # 可选：自定义图片显示尺寸（实验性）
+  imagePreviewHeight: 200
   homeInfoParams:
     Title: "你好，我是 Neo 👋"
     Content: "10年iOS工程师，热爱独立开发与写作。这个博客记录我探索 AI、自动化、自由生活的旅程。"
