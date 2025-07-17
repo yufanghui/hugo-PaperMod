@@ -48,10 +48,6 @@ params:
   ShowWordCount: true
   ShowReadingTime: true
 
-  assets:
-    css:
-      - css/extra.css   # ✅ 自定义 CSS 路径
-
   homeInfoParams:
     Title: "你好，我是 Neo 👋"
     Content: "10年iOS工程师，热爱独立开发与写作。这个博客记录我探索 AI、自动化、自由生活的旅程。"
