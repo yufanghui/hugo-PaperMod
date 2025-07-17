@@ -34,6 +34,11 @@ menu:
       url: /search/
       weight: 5
 
+markup:
+  goldmark:
+    extensions:
+      goat: false   # 关闭 GoAT 图表渲染
+
 # config.yaml
 params:
   comments: true  
@@ -55,10 +60,8 @@ params:
   homeInfoParams:
     Title: "你好，我是 Neo 👋"
     Content: "10年iOS工程师，热爱独立开发与写作。这个博客记录我探索 AI、自动化、自由生活的旅程。"
-  goldmark:
-    extensions:
-      goat: false   # 关闭 GoAT 图表渲染
-      
+
+
   socialIcons:
     - name: github
       url: "https://github.com/yufanghui"
