@@ -133,7 +133,7 @@ params:
 
 然后全局在config中打开评论，就成了。
 
-```
+```js
 comments: true
 ```
 
@@ -143,7 +143,7 @@ comments: true
 
 尝试设置了下css总是不生效。也是chatgpt的内容过时了，现在要加到一个extended的目录下，而不是css目录下。
 
-```
+```js
 your-project/
 └── assets/
     └── css/
@@ -159,7 +159,7 @@ your-project/
 
 一个比较有用的命令是
 
-```
+```js
 hugo server -D  
 ```
 
