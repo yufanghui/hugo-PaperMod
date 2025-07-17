@@ -34,11 +34,6 @@ menu:
       url: /search/
       weight: 5
 
-markup:
-  goldmark:
-    extensions:
-      goat: false   # 关闭 GoAT 图表渲染
-
 # config.yaml
 params:
   comments: true  
