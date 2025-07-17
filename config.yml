@@ -1,0 +1,11 @@
+baseURL: "https://blog.neoqingyi.xyz"
+title: "Neo 的博客"
+theme: "PaperMod"
+languageCode: "zh-cn"
+defaultContentLanguage: "zh"
+paginate: 5
+
+params:
+  homeInfoParams:
+    Title: "你好，世界"
+    Content: "这是 Neo 的博客，记录开发、AI、生活思考"
