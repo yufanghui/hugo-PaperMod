@@ -5,7 +5,41 @@ languageCode: "zh-cn"
 defaultContentLanguage: "zh"
 pagination:
   pagerSize: 5
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON  # 🔍 搜索功能用到
+
+taxonomies:
+  tag: "tags"
+  category: "categories"
+
+menu:
+  main:
+    - name: 首页
+      url: /
+      weight: 1
+    - name: 文章
+      url: /posts/
+      weight: 2
+    - name: 标签
+      url: /tags/
+      weight: 3
+    - name: 归档
+      url: /archives/
+      weight: 4
+    - name: 搜索
+      url: /search/
+      weight: 5
 params:
   homeInfoParams:
-    Title: "你好，世界"
-    Content: "这是 Neo 的博客，记录开发、AI、生活思考"
+    Title: "你好，我是 Neo 👋"
+    Content: "10年iOS工程师，热爱独立开发与写作。这个博客记录我探索 AI、自动化、自由生活的旅程。"
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/yufanghui"
+    - name: twitter
+      url: "https://twitter.com/damenmatt06"
+
