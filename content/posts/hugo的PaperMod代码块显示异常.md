@@ -1,5 +1,5 @@
 ---
-title: "hugo的[PaperMod](https://github.com/adityatelange/hugo-PaperMod/)代码块显示异常"
+title: "hugo的PaperMod代码块显示异常"
 date: "2025-07-18"
 tags: ["Hugo", "PaperMod"]
 ---
@@ -14,16 +14,16 @@ int a = 100;
 
 会显示成这样的
 
-图片
+![image-20250718142236677](https://qingyinoteimgs.oss-cn-beijing.aliyuncs.com/20250718142245759.png)
 
 可以通过修改配置修复
 
 ```
 markup:
   highlight:
-    noClasses: false
-    guessSyntax: true
-    codeFences: true
-    style: monokai
+    codeFences: true        # ✅ 支持 Markdown 中的代码块语法
+    guessSyntax: true       # ✅ 没写语言时尝试自动识别
+    noClasses: false        # ✅ 启用 class，配合 CSS 生效
+    style: monokai          # ✅ 你喜欢的代码样式
 ```
 

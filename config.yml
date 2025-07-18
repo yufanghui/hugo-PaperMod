@@ -64,3 +64,11 @@ params:
       url: "https://github.com/yufanghui"
     - name: twitter
       url: "https://twitter.com/damenmatt06"
+
+markup:
+  highlight:
+    noClasses: false
+    guessSyntax: true
+    codeFences: true
+    style: native
+
