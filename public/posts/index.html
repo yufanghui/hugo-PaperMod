@@ -1,22 +1,269 @@
-<!doctype html><html lang=zh dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Posts | Neo 的博客</title><meta name=keywords content><meta name=description content="Posts - Neo 的博客"><meta name=author content><link rel=canonical href=https://blog.neoqingyi.xyz/posts/><link crossorigin=anonymous href=/assets/css/stylesheet.7e9fbfdf4d45281c4eed00c05affef9689703e272cdfc817e378e8287f8c017c.css integrity="sha256-fp+/301FKBxO7QDAWv/vlolwPics38gX43joKH+MAXw=" rel="preload stylesheet" as=style><link rel=icon href=https://blog.neoqingyi.xyz/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://blog.neoqingyi.xyz/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://blog.neoqingyi.xyz/favicon-32x32.png><link rel=apple-touch-icon href=https://blog.neoqingyi.xyz/apple-touch-icon.png><link rel=mask-icon href=https://blog.neoqingyi.xyz/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://blog.neoqingyi.xyz/posts/index.xml><link rel=alternate hreflang=zh href=https://blog.neoqingyi.xyz/posts/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><meta name=referrer content="no-referrer-when-downgrade"><meta property="og:url" content="https://blog.neoqingyi.xyz/posts/"><meta property="og:site_name" content="Neo 的博客"><meta property="og:title" content="Posts"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="Posts"><meta name=twitter:description content><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://blog.neoqingyi.xyz/posts/"}]}</script></head><body class=list id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.neoqingyi.xyz/ accesskey=h title="Neo 的博客 (Alt + H)">Neo 的博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
-<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://blog.neoqingyi.xyz/ title=首页><span>首页</span></a></li><li><a href=https://blog.neoqingyi.xyz/posts/ title=文章><span class=active>文章</span></a></li><li><a href=https://blog.neoqingyi.xyz/tags/ title=标签><span>标签</span></a></li><li><a href=https://blog.neoqingyi.xyz/archives/ title=归档><span>归档</span></a></li><li><a href=https://blog.neoqingyi.xyz/search/ title=搜索><span>搜索</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=https://blog.neoqingyi.xyz/>主页</a></div><h1>Posts</h1></header><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>ai制作书籍解读视频初体验</h2></header><div class=entry-content><p>昨天一个友人发来一个视频，我点进去看了，似乎是ai生成的，统一的15分钟，统一的视频封面，ai口播，一致的图片制作的分镜，ai感觉非常浓厚。而且视频点赞居然还不错。我也想今天试试，来实现一个aidemo自动产出15分钟的讲书视频。
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Posts | Neo 的博客</title>
+<meta name="keywords" content="">
+<meta name="description" content="Posts - Neo 的博客">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7e9fbfdf4d45281c4eed00c05affef9689703e272cdfc817e378e8287f8c017c.css" integrity="sha256-fp&#43;/301FKBxO7QDAWv/vlolwPics38gX43joKH&#43;MAXw=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml">
+<link rel="alternate" hreflang="zh" href="http://localhost:1313/posts/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<meta name="referrer" content="no-referrer-when-downgrade">
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Neo 的博客 (Alt + H)">Neo 的博客</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="文章">
+                    <span class="active">文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">主页</a></div>
+  <h1>
+    Posts
+  </h1>
+</header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">ai制作书籍解读视频初体验
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>昨天一个友人发来一个视频，我点进去看了，似乎是ai生成的，统一的15分钟，统一的视频封面，ai口播，一致的图片制作的分镜，ai感觉非常浓厚。而且视频点赞居然还不错。我也想今天试试，来实现一个aidemo自动产出15分钟的讲书视频。
 ai的方案 当然还是询问ai了，最近听说kimi2性能爆表，使用kimi输入我的需求。以下是沟通完毕需求之后，kimi给出的基础版方案。
 最小可行 MVP（零代码、30 分钟内跑通）
-讲稿 → 15 min 逐段文案 工具：直接让 Kimi / 豆包生成 Prompt： “把《书名》做成 15 min 讲书视频，拆成 15 段 60 s 左右的口播文案，每段配一句画面描述，用表格输出：序号 | 口播文案 | 画面关键词” 图片 → 16:9 插图 工具：智谱清言「绘画智能体」或 美图 WHEE 动作：把上一步的“画面关键词”直接贴进去，统一尺寸 1024×576，下载 PNG。 图片转动态（平移/缩放） 工具：DynamiCrafter（免费在线版） 动作： 上传一张 PNG → 选 “Camera Pan” 或 “Zoom” 模板 → 6-8 s MP4 直接出。 15 张图并行跑，3 分钟搞定。 配音 工具：Speechify（网页版免注册） 动作：把 15 段文案一次性粘进去 → 选中文女声 → 调语速 1.1x → 一键下载整段 15 min MP3。 自动剪辑成片 工具：剪映「脚本成片」 动作： 新建「脚本成片」→ 导入 MP3 + 15 段 DynamiCrafter MP4 → 按顺序排好 → 开「智能匹配」→ 自动对齐 → 导出 1080p，2 分钟渲染完成。 成本 & 时长 • 0 元，全部用免费额度。 • 人工操作 ≈ 5 min，AI 跑图+跑视频 ≈ 10 min，剪映导出 ≈ 3 min。 → 20 分钟一条 15 min 讲书视频，换书名即可复制。
-...</p></div><footer class=entry-footer><span title='2025-07-18 00:00:00 +0000 UTC'>七月 18, 2025</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;150 字</footer><a class=entry-link aria-label="post link to ai制作书籍解读视频初体验" href=https://blog.neoqingyi.xyz/posts/%E5%B0%9D%E8%AF%95%E7%94%A8ai%E5%88%B6%E4%BD%9C%E4%B9%A6%E7%B1%8D%E8%A7%A3%E8%AF%BB%E8%A7%86%E9%A2%91/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>hugo的PaperMod代码块显示异常</h2></header><div class=entry-content><p>如果没有设置代码语言的话，会显示异常，会被当成svg解析。
+讲稿 → 15 min 逐段文案 工具：直接让 Kimi / 豆包生成 Prompt： “把《书名》做成 15 min 讲书视频，拆成 15 段 60 s 左右的口播文案，每段配一句画面描述，用表格输出：序号 | 口播文案 | 画面关键词” 图片 → 16:9 插图 工具：智谱清言「绘画智能体」或 美图 WHEE 动作：把上一步的“画面关键词”直接贴进去，统一尺寸 1024×576，下载 PNG。 图片转动态（平移/缩放） 工具：DynamiCrafter（免费在线版） 动作： 上传一张 PNG → 选 “Camera Pan” 或 “Zoom” 模板 → 6-8 s MP4 直接出。 15 张图并行跑，3 分钟搞定。 配音 工具：Speechify（网页版免注册） 动作：把 15 段文案一次性粘进去 → 选中文女声 → 调语速 1.1x → 一键下载整段 15 min MP3。 自动剪辑成片 工具：剪映「脚本成片」 动作： 新建「脚本成片」→ 导入 MP3 &#43; 15 段 DynamiCrafter MP4 → 按顺序排好 → 开「智能匹配」→ 自动对齐 → 导出 1080p，2 分钟渲染完成。 成本 &amp; 时长 • 0 元，全部用免费额度。 • 人工操作 ≈ 5 min，AI 跑图&#43;跑视频 ≈ 10 min，剪映导出 ≈ 3 min。 → 20 分钟一条 15 min 讲书视频，换书名即可复制。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-07-18 00:00:00 +0000 UTC'>七月 18, 2025</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;150 字</footer>
+  <a class="entry-link" aria-label="post link to ai制作书籍解读视频初体验" href="http://localhost:1313/posts/%E5%B0%9D%E8%AF%95%E7%94%A8ai%E5%88%B6%E4%BD%9C%E4%B9%A6%E7%B1%8D%E8%A7%A3%E8%AF%BB%E8%A7%86%E9%A2%91/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">hugo的PaperMod代码块显示异常
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>如果没有设置代码语言的话，会显示异常，会被当成svg解析。
 比如下面的：
 int a = 100; 会显示成这样的
 可以通过修改配置修复
-markup: highlight: codeFences: true # ✅ 支持 Markdown 中的代码块语法 guessSyntax: true # ✅ 没写语言时尝试自动识别 noClasses: false # ✅ 启用 class，配合 CSS 生效 style: monokai # ✅ 你喜欢的代码样式</p></div><footer class=entry-footer><span title='2025-07-18 00:00:00 +0000 UTC'>七月 18, 2025</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;35 字</footer><a class=entry-link aria-label="post link to hugo的PaperMod代码块显示异常" href=https://blog.neoqingyi.xyz/posts/hugo%E7%9A%84papermod%E4%BB%A3%E7%A0%81%E5%9D%97%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Cloudflare Pages 部署Hugo blog 体验</h2></header><div class=entry-content><p>frok模板仓库 今天研究了一下通过cloudflare部署一个网站，快是真的快。fork了一个hugo的官方模板
+markup: highlight: codeFences: true # ✅ 支持 Markdown 中的代码块语法 guessSyntax: true # ✅ 没写语言时尝试自动识别 noClasses: false # ✅ 启用 class，配合 CSS 生效 style: monokai # ✅ 你喜欢的代码样式 </p>
+  </div>
+  <footer class="entry-footer"><span title='2025-07-18 00:00:00 +0000 UTC'>七月 18, 2025</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;35 字</footer>
+  <a class="entry-link" aria-label="post link to hugo的PaperMod代码块显示异常" href="http://localhost:1313/posts/hugo%E7%9A%84papermod%E4%BB%A3%E7%A0%81%E5%9D%97%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Cloudflare Pages 部署Hugo blog 体验
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>frok模板仓库 今天研究了一下通过cloudflare部署一个网站，快是真的快。fork了一个hugo的官方模板
 https://github.com/adityatelange/hugo-PaperMod 建目录 然后新建了一个content/post和archives和search目录。
 archives的模板
---- title: "归档" layout: "archives" --- search的模板
---- title: "搜索" layout: "search" --- 配置config 新建了一个config.yml文件，简单配置下，提交，cloudflare就自动部署了，支持自定义子域名。
-baseURL: "https://blog.neoqingyi.xyz" title: "Neo 的博客" theme: "PaperMod" languageCode: "zh-cn" defaultContentLanguage: "zh" pagination: pagerSize: 5 # 每页 5 篇文章 outputs: home: - HTML - RSS - JSON # 🔍 搜索功能用到 taxonomies: tag: "tags" category: "categories" menu: main: - name: 首页 url: / weight: 1 - name: 文章 url: /posts/ weight: 2 - name: 标签 url: /tags/ weight: 3 - name: 归档 url: /archives/ weight: 4 - name: 搜索 url: /search/ weight: 5 # config.yaml params: comments: true # 1. 列表页全局隐藏封面 cover: hiddenInList: true # 只影响列表 # 2. 详情页全局启用封面 ShowCover: true # 只影响文章页 defaultTheme: auto ShowBreadCrumbs: true ShowPostNavLinks: true ShowWordCount: true ShowReadingTime: true homeInfoParams: Title: "你好，我是 Neo 👋" Content: "10年iOS工程师，热爱独立开发与写作。这个博客记录我探索 AI、自动化、自由生活的旅程。" socialIcons: - name: github url: "https://github.com/xxx" - name: twitter url: "https://twitter.com/xxx" 不过比较坑的就是调试样式，chatgpt给到的都是一些过时的语法，反复尝试修改配置文件，就是解决不了列表页面不展示图片，详情页展示图片的问题。最后询问kimi2解决了。
-...</p></div><footer class=entry-footer><span title='2025-07-17 00:00:00 +0000 UTC'>七月 17, 2025</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;191 字</footer><a class=entry-link aria-label="post link to Cloudflare Pages 部署Hugo blog 体验" href=https://blog.neoqingyi.xyz/posts/cloudflare%E9%83%A8%E7%BD%B2hugo/></a></article></main><footer class=footer><span>&copy; 2025 <a href=https://blog.neoqingyi.xyz/>Neo 的博客</a></span> ·
-<span>Powered by
-<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg></a><div class=busuanzi-footer style=text-align:center;margin-top:1em;font-size:.9em;color:#666><span id=busuanzi_container_site_pv>本站总访问量 <span id=busuanzi_value_site_pv></span> 次
-</span>·
-<span id=busuanzi_container_site_uv>您是第 <span id=busuanzi_value_site_uv></span> 位访客</span></div><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>
+--- title: &#34;归档&#34; layout: &#34;archives&#34; --- search的模板
+--- title: &#34;搜索&#34; layout: &#34;search&#34; --- 配置config 新建了一个config.yml文件，简单配置下，提交，cloudflare就自动部署了，支持自定义子域名。
+baseURL: &#34;https://blog.neoqingyi.xyz&#34; title: &#34;Neo 的博客&#34; theme: &#34;PaperMod&#34; languageCode: &#34;zh-cn&#34; defaultContentLanguage: &#34;zh&#34; pagination: pagerSize: 5 # 每页 5 篇文章 outputs: home: - HTML - RSS - JSON # 🔍 搜索功能用到 taxonomies: tag: &#34;tags&#34; category: &#34;categories&#34; menu: main: - name: 首页 url: / weight: 1 - name: 文章 url: /posts/ weight: 2 - name: 标签 url: /tags/ weight: 3 - name: 归档 url: /archives/ weight: 4 - name: 搜索 url: /search/ weight: 5 # config.yaml params: comments: true # 1. 列表页全局隐藏封面 cover: hiddenInList: true # 只影响列表 # 2. 详情页全局启用封面 ShowCover: true # 只影响文章页 defaultTheme: auto ShowBreadCrumbs: true ShowPostNavLinks: true ShowWordCount: true ShowReadingTime: true homeInfoParams: Title: &#34;你好，我是 Neo 👋&#34; Content: &#34;10年iOS工程师，热爱独立开发与写作。这个博客记录我探索 AI、自动化、自由生活的旅程。&#34; socialIcons: - name: github url: &#34;https://github.com/xxx&#34; - name: twitter url: &#34;https://twitter.com/xxx&#34; 不过比较坑的就是调试样式，chatgpt给到的都是一些过时的语法，反复尝试修改配置文件，就是解决不了列表页面不展示图片，详情页展示图片的问题。最后询问kimi2解决了。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-07-17 00:00:00 +0000 UTC'>七月 17, 2025</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;191 字</footer>
+  <a class="entry-link" aria-label="post link to Cloudflare Pages 部署Hugo blog 体验" href="http://localhost:1313/posts/cloudflare%E9%83%A8%E7%BD%B2hugo/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Neo 的博客</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+<div class="busuanzi-footer" style="text-align:center; margin-top:1em; font-size:0.9em; color:#666;">
+  <span id="busuanzi_container_site_pv">
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+  </span> · 
+  <span id="busuanzi_container_site_uv">
+    您是第 <span id="busuanzi_value_site_uv"></span> 位访客
+  </span>
+</div>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

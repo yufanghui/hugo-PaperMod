@@ -1,125 +1,157 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on Neo 的博客</title><link>https://blog.neoqingyi.xyz/posts/</link><description>Recent content in Posts on Neo 的博客</description><generator>Hugo -- 0.148.1</generator><language>zh-cn</language><lastBuildDate>Fri, 18 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.neoqingyi.xyz/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>ai制作书籍解读视频初体验</title><link>https://blog.neoqingyi.xyz/posts/%E5%B0%9D%E8%AF%95%E7%94%A8ai%E5%88%B6%E4%BD%9C%E4%B9%A6%E7%B1%8D%E8%A7%A3%E8%AF%BB%E8%A7%86%E9%A2%91/</link><pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate><guid>https://blog.neoqingyi.xyz/posts/%E5%B0%9D%E8%AF%95%E7%94%A8ai%E5%88%B6%E4%BD%9C%E4%B9%A6%E7%B1%8D%E8%A7%A3%E8%AF%BB%E8%A7%86%E9%A2%91/</guid><description>&lt;p>昨天一个友人发来一个视频，我点进去看了，似乎是ai生成的，统一的15分钟，统一的视频封面，ai口播，一致的图片制作的分镜，ai感觉非常浓厚。而且视频点赞居然还不错。我也想今天试试，来实现一个aidemo自动产出15分钟的讲书视频。&lt;/p>
-&lt;h1 id="ai的方案">ai的方案&lt;/h1>
-&lt;p>当然还是询问ai了，最近听说kimi2性能爆表，使用kimi输入我的需求。以下是沟通完毕需求之后，kimi给出的基础版方案。&lt;/p>
-&lt;blockquote>
-&lt;p>最小可行 MVP（零代码、30 分钟内跑通）&lt;/p>
-&lt;ol>
-&lt;li>讲稿 → 15 min 逐段文案
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Neo 的博客</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Neo 的博客</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 18 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ai制作书籍解读视频初体验</title>
+      <link>http://localhost:1313/posts/%E5%B0%9D%E8%AF%95%E7%94%A8ai%E5%88%B6%E4%BD%9C%E4%B9%A6%E7%B1%8D%E8%A7%A3%E8%AF%BB%E8%A7%86%E9%A2%91/</link>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E5%B0%9D%E8%AF%95%E7%94%A8ai%E5%88%B6%E4%BD%9C%E4%B9%A6%E7%B1%8D%E8%A7%A3%E8%AF%BB%E8%A7%86%E9%A2%91/</guid>
+      <description>&lt;p&gt;昨天一个友人发来一个视频，我点进去看了，似乎是ai生成的，统一的15分钟，统一的视频封面，ai口播，一致的图片制作的分镜，ai感觉非常浓厚。而且视频点赞居然还不错。我也想今天试试，来实现一个aidemo自动产出15分钟的讲书视频。&lt;/p&gt;
+&lt;h1 id=&#34;ai的方案&#34;&gt;ai的方案&lt;/h1&gt;
+&lt;p&gt;当然还是询问ai了，最近听说kimi2性能爆表，使用kimi输入我的需求。以下是沟通完毕需求之后，kimi给出的基础版方案。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最小可行 MVP（零代码、30 分钟内跑通）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;讲稿 → 15 min 逐段文案
 工具：直接让 Kimi / 豆包生成
 Prompt：
-“把《书名》做成 15 min 讲书视频，拆成 15 段 60 s 左右的口播文案，每段配一句画面描述，用表格输出：序号 | 口播文案 | 画面关键词”&lt;/li>
-&lt;li>图片 → 16:9 插图
+“把《书名》做成 15 min 讲书视频，拆成 15 段 60 s 左右的口播文案，每段配一句画面描述，用表格输出：序号 | 口播文案 | 画面关键词”&lt;/li&gt;
+&lt;li&gt;图片 → 16:9 插图
 工具：智谱清言「绘画智能体」或 美图 WHEE
-动作：把上一步的“画面关键词”直接贴进去，统一尺寸 1024×576，下载 PNG。&lt;/li>
-&lt;li>图片转动态（平移/缩放）
+动作：把上一步的“画面关键词”直接贴进去，统一尺寸 1024×576，下载 PNG。&lt;/li&gt;
+&lt;li&gt;图片转动态（平移/缩放）
 工具：DynamiCrafter（免费在线版）
 动作：
-&lt;ul>
-&lt;li>上传一张 PNG → 选 “Camera Pan” 或 “Zoom” 模板 → 6-8 s MP4 直接出。&lt;/li>
-&lt;li>15 张图并行跑，3 分钟搞定。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>配音
+&lt;ul&gt;
+&lt;li&gt;上传一张 PNG → 选 “Camera Pan” 或 “Zoom” 模板 → 6-8 s MP4 直接出。&lt;/li&gt;
+&lt;li&gt;15 张图并行跑，3 分钟搞定。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;配音
 工具：Speechify（网页版免注册）
-动作：把 15 段文案一次性粘进去 → 选中文女声 → 调语速 1.1x → 一键下载整段 15 min MP3。&lt;/li>
-&lt;li>自动剪辑成片
+动作：把 15 段文案一次性粘进去 → 选中文女声 → 调语速 1.1x → 一键下载整段 15 min MP3。&lt;/li&gt;
+&lt;li&gt;自动剪辑成片
 工具：剪映「脚本成片」
 动作：
-&lt;ul>
-&lt;li>新建「脚本成片」→ 导入 MP3 + 15 段 DynamiCrafter MP4 → 按顺序排好 → 开「智能匹配」→ 自动对齐 → 导出 1080p，2 分钟渲染完成。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ol>
-&lt;p>成本 &amp;amp; 时长
+&lt;ul&gt;
+&lt;li&gt;新建「脚本成片」→ 导入 MP3 + 15 段 DynamiCrafter MP4 → 按顺序排好 → 开「智能匹配」→ 自动对齐 → 导出 1080p，2 分钟渲染完成。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;成本 &amp;amp; 时长
 • 0 元，全部用免费额度。
 • 人工操作 ≈ 5 min，AI 跑图+跑视频 ≈ 10 min，剪映导出 ≈ 3 min。
-→ 20 分钟一条 15 min 讲书视频，换书名即可复制。&lt;/p></description></item><item><title>hugo的PaperMod代码块显示异常</title><link>https://blog.neoqingyi.xyz/posts/hugo%E7%9A%84papermod%E4%BB%A3%E7%A0%81%E5%9D%97%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/</link><pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate><guid>https://blog.neoqingyi.xyz/posts/hugo%E7%9A%84papermod%E4%BB%A3%E7%A0%81%E5%9D%97%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/</guid><description>&lt;p>如果没有设置代码语言的话，会显示异常，会被当成svg解析。&lt;/p>
-&lt;p>比如下面的：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>int a = 100;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>会显示成这样的&lt;/p>
-&lt;p>&lt;img alt="image-20250718142236677" loading="lazy" src="https://qingyinoteimgs.oss-cn-beijing.aliyuncs.com/20250718142245759.png">&lt;/p>
-&lt;p>可以通过修改配置修复&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>markup:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> highlight:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> codeFences: true # ✅ 支持 Markdown 中的代码块语法
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> guessSyntax: true # ✅ 没写语言时尝试自动识别
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> noClasses: false # ✅ 启用 class，配合 CSS 生效
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> style: monokai # ✅ 你喜欢的代码样式
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Cloudflare Pages 部署Hugo blog 体验</title><link>https://blog.neoqingyi.xyz/posts/cloudflare%E9%83%A8%E7%BD%B2hugo/</link><pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate><guid>https://blog.neoqingyi.xyz/posts/cloudflare%E9%83%A8%E7%BD%B2hugo/</guid><description>&lt;h1 id="frok模板仓库">frok模板仓库&lt;/h1>
-&lt;p>今天研究了一下通过cloudflare部署一个网站，快是真的快。fork了一个hugo的官方模板&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>https:&lt;span style="color:#999;font-style:italic">//github.com/adityatelange/hugo-PaperMod
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="建目录">建目录&lt;/h1>
-&lt;p>然后新建了一个content/post和archives和search目录。&lt;/p>
-&lt;p>&lt;img alt="image-20250717183116496" loading="lazy" src="https://qingyinoteimgs.oss-cn-beijing.aliyuncs.com/20250717183118386.png">&lt;/p>
-&lt;p>archives的模板&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf;text-decoration:underline">---&lt;/span>&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">title&lt;/span>:&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#ed9d13">&amp;#34;归档&amp;#34;&lt;/span>&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">layout&lt;/span>:&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#ed9d13">&amp;#34;archives&amp;#34;&lt;/span>&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#447fcf;text-decoration:underline">---&lt;/span>&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>search的模板&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf;text-decoration:underline">---&lt;/span>&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">title&lt;/span>:&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#ed9d13">&amp;#34;搜索&amp;#34;&lt;/span>&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">layout&lt;/span>:&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#ed9d13">&amp;#34;search&amp;#34;&lt;/span>&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#447fcf;text-decoration:underline">---&lt;/span>&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="配置config">配置config&lt;/h1>
-&lt;p>新建了一个config.yml文件，简单配置下，提交，cloudflare就自动部署了，支持自定义子域名。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>baseURL: &lt;span style="color:#ed9d13">&amp;#34;https://blog.neoqingyi.xyz&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>title: &lt;span style="color:#ed9d13">&amp;#34;Neo 的博客&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>theme: &lt;span style="color:#ed9d13">&amp;#34;PaperMod&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>languageCode: &lt;span style="color:#ed9d13">&amp;#34;zh-cn&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>defaultContentLanguage: &lt;span style="color:#ed9d13">&amp;#34;zh&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pagination:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pagerSize: &lt;span style="color:#3677a9">5&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">#&lt;/span> 每页 &lt;span style="color:#3677a9">5&lt;/span> 篇文章
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>outputs:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> home:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - HTML
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - RSS
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - JSON &lt;span style="color:#a61717;background-color:#e3d2d2">#&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">🔍&lt;/span> 搜索功能用到
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taxonomies:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tag: &lt;span style="color:#ed9d13">&amp;#34;tags&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> category: &lt;span style="color:#ed9d13">&amp;#34;categories&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>menu:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> main:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: 首页
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> url: &lt;span style="color:#a61717;background-color:#e3d2d2">/&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> weight: &lt;span style="color:#3677a9">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: 文章
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> url: &lt;span style="color:#ed9d13">/posts/&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> weight: &lt;span style="color:#3677a9">2&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: 标签
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> url: &lt;span style="color:#ed9d13">/tags/&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> weight: &lt;span style="color:#3677a9">3&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: 归档
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> url: &lt;span style="color:#ed9d13">/archives/&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> weight: &lt;span style="color:#3677a9">4&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: 搜索
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> url: &lt;span style="color:#ed9d13">/search/&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> weight: &lt;span style="color:#3677a9">5&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">#&lt;/span> config.yaml
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>params:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> comments: &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a61717;background-color:#e3d2d2">#&lt;/span> &lt;span style="color:#3677a9">1.&lt;/span> 列表页全局隐藏封面
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cover:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hiddenInList: &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">#&lt;/span> 只影响列表
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a61717;background-color:#e3d2d2">#&lt;/span> &lt;span style="color:#3677a9">2.&lt;/span> 详情页全局启用封面
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ShowCover: &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span> &lt;span style="color:#a61717;background-color:#e3d2d2">#&lt;/span> 只影响文章页
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> defaultTheme: auto
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ShowBreadCrumbs: &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ShowPostNavLinks: &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ShowWordCount: &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ShowReadingTime: &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> homeInfoParams:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Title: &lt;span style="color:#ed9d13">&amp;#34;你好，我是 Neo 👋&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Content: &lt;span style="color:#ed9d13">&amp;#34;10年iOS工程师，热爱独立开发与写作。这个博客记录我探索 AI、自动化、自由生活的旅程。&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socialIcons:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: github
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> url: &lt;span style="color:#ed9d13">&amp;#34;https://github.com/xxx&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: twitter
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> url: &lt;span style="color:#ed9d13">&amp;#34;https://twitter.com/xxx&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>不过比较坑的就是调试样式，chatgpt给到的都是一些过时的语法，反复尝试修改配置文件，就是解决不了列表页面不展示图片，详情页展示图片的问题。最后询问kimi2解决了。&lt;/p></description></item></channel></rss>
+→ 20 分钟一条 15 min 讲书视频，换书名即可复制。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>hugo的PaperMod代码块显示异常</title>
+      <link>http://localhost:1313/posts/hugo%E7%9A%84papermod%E4%BB%A3%E7%A0%81%E5%9D%97%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/</link>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hugo%E7%9A%84papermod%E4%BB%A3%E7%A0%81%E5%9D%97%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/</guid>
+      <description>&lt;p&gt;如果没有设置代码语言的话，会显示异常，会被当成svg解析。&lt;/p&gt;
+&lt;p&gt;比如下面的：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;int a = 100;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;会显示成这样的&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250718142236677&#34; loading=&#34;lazy&#34; src=&#34;https://qingyinoteimgs.oss-cn-beijing.aliyuncs.com/20250718142245759.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可以通过修改配置修复&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;markup:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  highlight:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    codeFences: true        # ✅ 支持 Markdown 中的代码块语法
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    guessSyntax: true       # ✅ 没写语言时尝试自动识别
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    noClasses: false        # ✅ 启用 class，配合 CSS 生效
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    style: monokai          # ✅ 你喜欢的代码样式
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Cloudflare Pages 部署Hugo blog 体验</title>
+      <link>http://localhost:1313/posts/cloudflare%E9%83%A8%E7%BD%B2hugo/</link>
+      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/cloudflare%E9%83%A8%E7%BD%B2hugo/</guid>
+      <description>&lt;h1 id=&#34;frok模板仓库&#34;&gt;frok模板仓库&lt;/h1&gt;
+&lt;p&gt;今天研究了一下通过cloudflare部署一个网站，快是真的快。fork了一个hugo的官方模板&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;https:&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;//github.com/adityatelange/hugo-PaperMod
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;建目录&#34;&gt;建目录&lt;/h1&gt;
+&lt;p&gt;然后新建了一个content/post和archives和search目录。&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250717183116496&#34; loading=&#34;lazy&#34; src=&#34;https://qingyinoteimgs.oss-cn-beijing.aliyuncs.com/20250717183118386.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;archives的模板&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;title&lt;/span&gt;:&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;归档&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;layout&lt;/span&gt;:&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;archives&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;search的模板&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;title&lt;/span&gt;:&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;搜索&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;layout&lt;/span&gt;:&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;search&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;---&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;配置config&#34;&gt;配置config&lt;/h1&gt;
+&lt;p&gt;新建了一个config.yml文件，简单配置下，提交，cloudflare就自动部署了，支持自定义子域名。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;baseURL: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;https://blog.neoqingyi.xyz&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;title: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Neo 的博客&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;theme: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;PaperMod&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;languageCode: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;zh-cn&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;defaultContentLanguage: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;zh&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pagination:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  pagerSize: &lt;span style=&#34;color:#3677a9&#34;&gt;5&lt;/span&gt;  &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;#&lt;/span&gt; 每页 &lt;span style=&#34;color:#3677a9&#34;&gt;5&lt;/span&gt; 篇文章
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;outputs:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  home:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - HTML
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - RSS
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - JSON  &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;#&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;🔍&lt;/span&gt; 搜索功能用到
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;taxonomies:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  tag: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;tags&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  category: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;categories&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;menu:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  main:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - name: 首页
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      url: &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      weight: &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - name: 文章
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      url: &lt;span style=&#34;color:#ed9d13&#34;&gt;/posts/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      weight: &lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - name: 标签
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      url: &lt;span style=&#34;color:#ed9d13&#34;&gt;/tags/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      weight: &lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - name: 归档
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      url: &lt;span style=&#34;color:#ed9d13&#34;&gt;/archives/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      weight: &lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - name: 搜索
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      url: &lt;span style=&#34;color:#ed9d13&#34;&gt;/search/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      weight: &lt;span style=&#34;color:#3677a9&#34;&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;#&lt;/span&gt; config.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;params:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  comments: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;#&lt;/span&gt; &lt;span style=&#34;color:#3677a9&#34;&gt;1.&lt;/span&gt; 列表页全局隐藏封面
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  cover:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    hiddenInList: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;#&lt;/span&gt; 只影响列表
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;#&lt;/span&gt; &lt;span style=&#34;color:#3677a9&#34;&gt;2.&lt;/span&gt; 详情页全局启用封面
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ShowCover: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;        &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;#&lt;/span&gt; 只影响文章页
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  defaultTheme: auto
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ShowBreadCrumbs: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ShowPostNavLinks: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ShowWordCount: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ShowReadingTime: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  homeInfoParams:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Title: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;你好，我是 Neo 👋&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Content: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;10年iOS工程师，热爱独立开发与写作。这个博客记录我探索 AI、自动化、自由生活的旅程。&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  socialIcons:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - name: github
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      url: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;https://github.com/xxx&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - name: twitter
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      url: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;https://twitter.com/xxx&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;不过比较坑的就是调试样式，chatgpt给到的都是一些过时的语法，反复尝试修改配置文件，就是解决不了列表页面不展示图片，详情页展示图片的问题。最后询问kimi2解决了。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
