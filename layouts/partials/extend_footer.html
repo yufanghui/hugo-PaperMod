@@ -1,3 +1,10 @@
-{{- /* Footer custom content area start */ -}}
-{{- /*     Insert any custom code web-analytics, resources, etc. here */ -}}
-{{- /* Footer custom content area end */ -}}
+{{- if .Site.Params.busuanzi.enable }}
+<div class="busuanzi-footer" style="text-align:center; margin-top:1em; font-size:0.9em; color:#666;">
+  <span id="busuanzi_container_site_pv">
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+  </span> · 
+  <span id="busuanzi_container_site_uv">
+    您是第 <span id="busuanzi_value_site_uv"></span> 位访客
+  </span>
+</div>
+{{- end }}

@@ -58,23 +58,9 @@
         }
 
     </style>
-</noscript><style>
- 
-.list .entry-cover img {
-  max-height: 200px;
-  object-fit: cover;
-  width: 100%;
-  border-radius: 8px;
-}
-
- 
-.post-single .entry-cover img {
-  max-height: 300px;
-  object-fit: cover;
-  width: 100%;
-  border-radius: 8px;
-}
-</style>
+</noscript>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<meta name="referrer" content="no-referrer-when-downgrade">
 </head>
 
 <body class="list" id="top">
@@ -196,6 +182,23 @@ ai的方案 当然还是询问ai了，最近听说kimi2性能爆表，使用kimi
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">hugo的[PaperMod](https://github.com/adityatelange/hugo-PaperMod/)代码块显示异常
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>如果没有设置代码语言的话，会显示异常，会被当成svg解析。
+比如下面的：
+int a = 100; 会显示成这样的
+图片
+可以通过修改配置修复
+markup: highlight: noClasses: false guessSyntax: true codeFences: true style: monokai </p>
+  </div>
+  <footer class="entry-footer"><span title='2025-07-18 00:00:00 +0000 UTC'>七月 18, 2025</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;19 字</footer>
+  <a class="entry-link" aria-label="post link to hugo的[PaperMod](https://github.com/adityatelange/hugo-PaperMod/)代码块显示异常" href="http://localhost:1313/posts/hugo%E7%9A%84papermod%E4%BB%A3%E7%A0%81%E5%9D%97%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Cloudflare Pages 部署Hugo blog 体验
     </h2>
   </header>
@@ -227,6 +230,14 @@ baseURL: &#34;https://blog.neoqingyi.xyz&#34; title: &#34;Neo 的博客&#34; the
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
+<div class="busuanzi-footer" style="text-align:center; margin-top:1em; font-size:0.9em; color:#666;">
+  <span id="busuanzi_container_site_pv">
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+  </span> · 
+  <span id="busuanzi_container_site_uv">
+    您是第 <span id="busuanzi_value_site_uv"></span> 位访客
+  </span>
+</div>
 
 <script>
     let menu = document.getElementById('menu')

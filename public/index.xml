@@ -51,6 +51,25 @@ Prompt：
 → 20 分钟一条 15 min 讲书视频，换书名即可复制。&lt;/p&gt;</description>
     </item>
     <item>
+      <title>hugo的[PaperMod](https://github.com/adityatelange/hugo-PaperMod/)代码块显示异常</title>
+      <link>http://localhost:1313/posts/hugo%E7%9A%84papermod%E4%BB%A3%E7%A0%81%E5%9D%97%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/</link>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hugo%E7%9A%84papermod%E4%BB%A3%E7%A0%81%E5%9D%97%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/</guid>
+      <description>&lt;p&gt;如果没有设置代码语言的话，会显示异常，会被当成svg解析。&lt;/p&gt;
+&lt;p&gt;比如下面的：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;int a = 100;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;会显示成这样的&lt;/p&gt;
+&lt;p&gt;图片&lt;/p&gt;
+&lt;p&gt;可以通过修改配置修复&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;markup:
+  highlight:
+    noClasses: false
+    guessSyntax: true
+    codeFences: true
+    style: monokai
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
       <title>Cloudflare Pages 部署Hugo blog 体验</title>
       <link>http://localhost:1313/posts/cloudflare%E9%83%A8%E7%BD%B2hugo/</link>
       <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>

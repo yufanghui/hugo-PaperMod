@@ -1,17 +1,4 @@
-<style>
-/* 列表页图片 - 小一点，统一展示 */
-.list .entry-cover img {
-  max-height: 200px;
-  object-fit: cover;
-  width: 100%;
-  border-radius: 8px;
-}
-
-/* 详情页图片 - 显示完整，不裁剪 */
-.post-single .entry-cover img {
-  max-height: 300px;
-  object-fit: cover;
-  width: 100%;
-  border-radius: 8px;
-}
-</style>
+{{- if .Site.Params.busuanzi.enable }}
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<meta name="referrer" content="no-referrer-when-downgrade">
+{{- end }}
