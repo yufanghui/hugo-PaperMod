@@ -1,2 +1,3 @@
+/public/
 /resources/_gen/     # Hugo 的 Sass/JS 缓存
 .hugo_build.lock

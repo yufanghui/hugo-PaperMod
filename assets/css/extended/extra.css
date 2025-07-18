@@ -1,0 +1,4 @@
+/* 同时命中带语言和不带语言的代码块 */
+pre, pre code, .highlight pre code {
+  font-size: 0.875rem;   /* 14px，按需调整 */
+}
