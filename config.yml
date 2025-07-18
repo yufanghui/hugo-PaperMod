@@ -67,7 +67,7 @@ params:
 
 markup:
   highlight:
-    noClasses: false
+    noClasses: true
     guessSyntax: true
     codeFences: true
     style: native
