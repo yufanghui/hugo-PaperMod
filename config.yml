@@ -36,6 +36,7 @@ menu:
 
 # config.yaml
 params:
+  env: production
   comments: true  
   # 1. 列表页全局隐藏封面
   cover:
@@ -67,10 +68,10 @@ params:
     - name: twitter
       url: "https://twitter.com/damenmatt06"
 
-markup:
-  highlight:
-    noClasses: true
-    guessSyntax: true
-    codeFences: true
-    style: native
+# markup:
+#   highlight:
+#     noClasses: true
+#     guessSyntax: true
+#     codeFences: true
+#     style: native
 

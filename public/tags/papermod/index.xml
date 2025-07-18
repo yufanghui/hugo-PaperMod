@@ -1,13 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>PaperMod on Neo 的博客</title><link>https://blog.neoqingyi.xyz/tags/papermod/</link><description>Recent content in PaperMod on Neo 的博客</description><generator>Hugo -- 0.148.1</generator><language>zh-cn</language><lastBuildDate>Fri, 18 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.neoqingyi.xyz/tags/papermod/index.xml" rel="self" type="application/rss+xml"/><item><title>hugo的PaperMod代码块显示异常</title><link>https://blog.neoqingyi.xyz/posts/hugo%E7%9A%84papermod%E4%BB%A3%E7%A0%81%E5%9D%97%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/</link><pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate><guid>https://blog.neoqingyi.xyz/posts/hugo%E7%9A%84papermod%E4%BB%A3%E7%A0%81%E5%9D%97%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/</guid><description>&lt;p>如果没有设置代码语言的话，会显示异常，会被当成svg解析。&lt;/p>
-&lt;p>比如下面的：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>int a = 100;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>会显示成这样的&lt;/p>
-&lt;p>&lt;img alt="image-20250718142236677" loading="lazy" src="https://qingyinoteimgs.oss-cn-beijing.aliyuncs.com/20250718142245759.png">&lt;/p>
-&lt;p>可以通过修改配置修复&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>markup:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> highlight:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> codeFences: true # ✅ 支持 Markdown 中的代码块语法
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> guessSyntax: true # ✅ 没写语言时尝试自动识别
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> noClasses: false # ✅ 启用 class，配合 CSS 生效
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> style: monokai # ✅ 你喜欢的代码样式
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>PaperMod on Neo 的博客</title>
+    <link>http://localhost:1313/tags/papermod/</link>
+    <description>Recent content in PaperMod on Neo 的博客</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 18 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/papermod/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo的PaperMod代码块显示异常</title>
+      <link>http://localhost:1313/posts/hugo%E7%9A%84papermod%E4%BB%A3%E7%A0%81%E5%9D%97%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/</link>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hugo%E7%9A%84papermod%E4%BB%A3%E7%A0%81%E5%9D%97%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/</guid>
+      <description>&lt;p&gt;如果没有设置代码语言的话，会显示异常，会被当成svg解析。&lt;/p&gt;
+&lt;p&gt;比如下面的：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;int a = 100;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;会显示成这样的&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250718142236677&#34; loading=&#34;lazy&#34; src=&#34;https://qingyinoteimgs.oss-cn-beijing.aliyuncs.com/20250718142245759.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可以通过修改配置修复&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;markup:
+  highlight:
+    codeFences: true        # ✅ 支持 Markdown 中的代码块语法
+    guessSyntax: true       # ✅ 没写语言时尝试自动识别
+    noClasses: false        # ✅ 启用 class，配合 CSS 生效
+    style: monokai          # ✅ 你喜欢的代码样式
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>
